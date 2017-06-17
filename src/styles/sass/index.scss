@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans');
+$containerBg:#F1F1F1;
+$titleYellow:#FFF559;
+$textGrayB:#2A2A2A;
+$OS_font:'Open Sans','Consolas', Arial, Helvetica, sans-serif;
+
+.container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $containerBg;
+}
+.todoapp{
+    position: relative;
+    top:25%;
+    min-height: 300px;
+    width: 50%;
+    height: 30%;
+    left: 25%;
+}
+.cardStyle{
+    position: relative;
+    width: 100%;
+    border-radius: 6px;
+    min-height: 0;
+    background-color: #FBFBFB;
+    button{
+        color:$textGrayB;
+        font-family: $OS_font; 
+    }
+}
+.cardTitleBox{
+    background-color:$titleYellow;
+    color:$textGrayB !important;
+    padding-top:20px;
+    >h2{
+        margin:0 auto;
+        font-family: "Lato";
+    }
+}
+.cardText{
+    background-color: white;
+    width:100%;
+    padding:0;
+}
+.textInput>input{
+    font-family: $OS_font;
+    font-size: 1rem;
+    color: #757575;
+    padding: .5em;
+    border-radius: 2px;
+    border: 1px solid lightgray;
+    outline: none;
+    box-sizing: border-box;
+    &:focus{
+        border: 1px solid $titleYellow;
+    }
+}
+.todo{
+    display: flex;
+    padding:16px;
+    border-top:1px solid $containerBg;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    >.text{
+        display: flex;
+        margin:auto 0;
+        width:57%;
+        >.textData{
+            margin:auto 0;
+            margin-left:5px;
+            width:100%;
+            word-wrap: break-word;
+            &,.okToggleDiv>i{
+                font-size:24px;
+                vertical-align: middle;
+            }
+        }
+    }
+    &:hover>.button{
+        >.yesBtn, >.delBtn{
+            visibility:visible;
+            opacity: 1;
+            transition: all .2s;
+        }    
+    }
+    >.button>button{
+        width: auto;
+    }
+}
+.ok{
+    color:lightgreen;
+}
+.yesBtn,.delBtn{
+    transition: all .2s;
+    opacity: 0;
+    visibility:hidden;  
+}
